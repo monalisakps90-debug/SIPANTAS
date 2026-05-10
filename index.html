@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SI-PANTAS KEMISKINAN</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f8f2;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #2e7d32, #c0ca33);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::after{
+    content:'';
+    position:absolute;
+    width:300px;
+    height:300px;
+    background: rgba(255,255,255,0.08);
+    border-radius:50%;
+    top:-120px;
+    right:-100px;
+}
+
+.logo {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    background: white;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 16px;
+    opacity: 0.95;
+}
+
+.tag {
+    margin-top: 15px;
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+}
+
+/* CONTAINER */
+.container {
+    padding: 35px;
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size: 24px;
+    color: #2e7d32;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 35px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    border-left: 6px solid #8bc34a;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before{
+    content:'';
+    position:absolute;
+    width:120px;
+    height:120px;
+    background: rgba(139,195,74,0.08);
+    border-radius:50%;
+    top:-40px;
+    right:-40px;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #2e7d32;
+    font-size: 19px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+/* FORM BOX */
+.form-box {
+    background: white;
+    padding: 35px;
+    margin: 0 35px 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+}
+
+/* GRID FORM */
+.form-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:22px;
+    margin-top:25px;
+    align-items:stretch;
+}
+
+/* ITEM FORM */
+.form-item{
+    display:flex;
+    flex-direction:column;
+}
+
+/* KHUSUS TEXTAREA AGAR PROPORSIONAL */
+.form-item.full-height textarea{
+    flex:1;
+    min-height:120px;
+}
+
+/* LABEL */
+.form-item label{
+    margin-bottom:8px;
+    font-weight:600;
+    color:#2e7d32;
+    font-size:14px;
+}
+
+/* INPUT */
+input,
+textarea{
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid #d7dfcf;
+    font-size:14px;
+    background:#fafcf8;
+    transition:all 0.3s ease;
+}
+
+/* FOCUS */
+input:focus,
+textarea:focus{
+    border-color:#8bc34a;
+    outline:none;
+    background:white;
+    box-shadow:0 0 0 4px rgba(139,195,74,0.15);
+}
+
+/* FILE INPUT */
+input[type="file"]{
+    padding:11px;
+    background:#f4f8f2;
+}
+
+/* TEXTAREA */
+textarea{
+    resize:none;
+}
+
+/* BUTTON */
+button{
+    margin-top:30px;
+    padding:14px 34px;
+    border:none;
+    background:linear-gradient(135deg,#2e7d32,#aed581);
+    color:white;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+    font-size:15px;
+    transition:0.3s ease;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(46,125,50,0.25);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-box{
+        margin:20px;
+        padding:25px;
+    }
+
+}
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#eef5e8;
+    font-size:14px;
+    color:#666;
+    margin-top:30px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header h1{
+        font-size:28px;
+    }
+
+    .cards{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <img src="poto/Logo Kota PalangkaRaya.png"
+    alt="Logo Kota Palangka Raya"
+    class="logo">
+
+    <h1>SI-PANTAS KEMISKINAN</h1>
+
+    <p>
+        Sistem Pelaporan Terintegrasi dan Selaras Kemiskinan
+    </p>
+
+    <div class="tag">
+        BAPPERIDA KOTA PALANGKA RAYA
+    </div>
+
+</header>
+
+<div class="cards">
+
+    <a href="https://drive.google.com/drive/folders/1BWaPCyz3pkeTU_LKP_dnkwfjSVS9EQe6?usp=sharing" target="_blank" class="card">
+        <h3>📑 Perencanaan & Kebijakan</h3>
+        <p>Dokumen RKPD, RPJMD, dan kebijakan kemiskinan.</p>
+    </a>
+
+    <a href="https://drive.google.com/drive/folders/1d0SgIAuLW5ukhT_FdGUhUqAoS1-rh3Qk?usp=sharing" target="_blank" class="card">
+        <h3>📊 Data Kemiskinan & Verval</h3>
+        <p>Data by name by address dan hasil verifikasi.</p>
+    </a>
+
+    <a href="https://drive.google.com/drive/folders/1TrG5lKXcfbyy5QsXltIWBlTMlBrt4KUz?usp=sharing" target="_blank" class="card">
+        <h3>📈 Matriks & Pelaporan</h3>
+        <p>Laporan rutin dan matriks monitoring.</p>
+    </a>
+
+    <a href="https://drive.google.com/drive/folders/1EylcZCzcBjPoETEIi2qEkASY96eU3l6x?usp=sharing" target="_blank" class="card">
+        <h3>📷 Evidence Kegiatan</h3>
+        <p>Dokumentasi kegiatan dan bukti dukung.</p>
+    </a>
+
+    <a href="https://drive.google.com/drive/folders/1eFTINDSgh1dZTj9ruwG_7pI7BFJ4iHAH?usp=sharing" target="_blank" class="card">
+        <h3>📁 Administrasi & Surat</h3>
+        <p>Surat menyurat dan dokumen administrasi.</p>
+    </a>
+<!-- TUTUP DIV CARDS -->
+</div>
+
+<!-- FORM KRITIK & SARAN -->
+<div class="form-box">
+
+    <h2 class="section-title">📝 Kritik & Saran</h2>
+
+    <form>
+
+        <div class="form-grid">
+
+            <!-- BARIS 1 -->
+            <div class="form-item">
+                <label>Nama</label>
+                <input type="text" placeholder="Masukkan nama">
+            </div>
+
+            <div class="form-item">
+                <label>Instansi</label>
+                <input type="text" placeholder="Masukkan instansi">
+            </div>
+
+            <div class="form-item">
+                <label>No. HP / Email</label>
+                <input type="text" placeholder="Masukkan kontak">
+            </div>
+
+            <!-- BARIS 2 -->
+            <div class="form-item">
+                <label>Jenis Masukan</label>
+                <input type="text" placeholder="Contoh: Kritik / Saran">
+            </div>
+
+            <div class="form-item">
+                <label>Upload Dokumen</label>
+                <input type="file">
+            </div>
+
+            <div class="form-item full-height">
+                <label>Keterangan</label>
+                <textarea placeholder="Tulis pesan..."></textarea>
+            </div>
+
+        </div>
+
+        <button type="submit">Kirim</button>
+
+    </form>
+
+</div>
+
+<footer>
+    © 2026 BAPPERIDA Kota Palangka Raya • SI-PANTAS KEMISKINAN
+</footer>
+
+</body>
+</html>
